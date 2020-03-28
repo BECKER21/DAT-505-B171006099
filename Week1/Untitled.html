@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Telep</title>
+  <script type="text/javascript">
+    function checkTel() {
+      var obj = document.getElementById("txtTel");
+      var value = obj.value;
+      var regTel1 = /^1\d{10}$/.test(value);//带区号的固定电话
+
+      if (value != "") {
+        if (!regTel1) {
+          alert("电话号码输入有误！");
+          obj.focus();
+          return false;
+        }
+      }
+      else {
+        alert("请输入电话号码！");
+        return false;
+      }
+      alert("电话号码输入正确！");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  请输入电话号码：
+  <input type="text" id="txtTel" />
+  <input type="button" id="btnCheck" value="验证" onclick="return checkTel();" />
+</body>
+</html>

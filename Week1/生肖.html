@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <input type="text" id="year-input">
+    <button onclick="btnClick()">查询</button>
+    <p id="show-result"></p>
+
+    <script>
+        function btnClick() {
+            let year = document.getElementById('year-input').value
+            yeart(year)
+        }
+
+        function yeart(year) {
+            var now = new Date();
+            var ss = year - 1000;
+            var ssc = ss % 12;
+            var ssyear = new Array("鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "酉", "狗", "猪");
+            document.getElementById('show-result').innerText = year + "年\n" + ssyear[ssc];
+        }
+    </script>
+</body>
+
+</html>
